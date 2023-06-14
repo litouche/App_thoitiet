@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 33
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+    }
+
+    lintOptions {
+        // Turns off checks for the issue IDs you specify.
+        disable 'TypographyFractions', 'TypographyQuotes'
+        // Turns on checks for the issue IDs you specify. These checks are in
+        // addition to the default lint checks.
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        // To enable checks for only a subset of issue IDs and ignore all others,
+        // list the issue IDs with the 'check' property instead. This property overrides
+        // any issue IDs you enable or disable using the properties above.
+        check 'NewApi', 'InlinedApi'
+        // If set to true, turns off analysis progress reporting by lint.
+        quiet true
+        // if set to true (default), stops the build if errors are found.
+        abortOnError false
+        // if true, only report errors.
+        ignoreWarnings true
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.billingclient:billing-ktx:5.0.0'
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+
+    testImplementation 'junit:junit:4.13.2'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.aemerse'
+                artifactId = 'Google-IAP'
+                version = '1.2.5'
+            }
+        }
+    }
+}

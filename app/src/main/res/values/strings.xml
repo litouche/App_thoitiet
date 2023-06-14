@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather Pro</string>
+    <string name="home_dashboard">Home</string>
+    <string name="city_weather_7_days">City Weather 7 days</string>
+    <string name="error_occurred">Oops! An error occurred. \n\n Please check your internet connection.
+        \n\n Swipe down to retry.</string>
+<!--    <string name="website_url">http://www.24h.com.vn/du-bao-thoi-tiet-c568.html</string>-->
+    <string name="website_url">https://www.google.com.vn/?hl=vi</string>
+    <string name="text_drawer_open">Open</string>
+    <string name="text_drawer_close">Close</string>
+
+    <string name="main_tv_ticket">%s ticket</string>
+    <string name="charge_tv_coin">%s VND/%s coin</string>
+    <string name="message_purchase_one">%s</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="fus.com.weathertoday.ui.home.HomeFragment"
+        android:label="@string/home_dashboard"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_citySevenDaysWeatherFragment"
+            app:destination="@id/citySevenDaysWeatherFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/citySevenDaysWeatherFragment"
+        android:name="fus.com.weathertoday.ui.weather7days.CityWeatherSevenDaysFragment"
+        android:label="@string/city_weather_7_days"
+        tools:layout="@layout/fragment_weather_next_7_day" />
+
+</navigation>

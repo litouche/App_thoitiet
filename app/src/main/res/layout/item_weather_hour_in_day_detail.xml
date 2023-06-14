@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_hour_in_day_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/bg_item_weather_today_white"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:id="@+id/tv_hour_in_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="12:00"
+            android:textColor="@color/gray"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_weather_hour_in_day_status"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_heavy_rain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hour_in_day" />
+
+        <TextView
+            android:id="@+id/tv_weather_hour_in_day_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:includeFontPadding="false"
+            android:text="22"
+            android:textColor="@color/darkgray"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_weather_hour_in_day_status" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

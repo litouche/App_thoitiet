@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_ticket_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_40"
+        android:layout_marginVertical="@dimen/dp_12"
+        android:background="@drawable/bg_card_boder"
+        android:padding="@dimen/dp_8">
+
+        <ImageView
+            android:id="@+id/img_coin"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_dollar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ticket_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="100 coin/1 ticket"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/img_coin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_coin"
+            app:layout_constraintTop_toTopOf="@+id/img_coin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
