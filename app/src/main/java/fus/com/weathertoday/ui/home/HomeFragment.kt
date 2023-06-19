@@ -77,9 +77,7 @@ class HomeFragment : BaseFragment() {
             findNavController().navigate(action)
         }
 //        activity?.window?.statusBarColor = resources.getColor(R.color.bg_item_blue_white, null)
-        binding.viewContentDetail.icMenu.setOnClickListener {
-            (activity as? MainActivity)?.openCloseNavigationDrawer(it)
-        }
+
         setVisibleAllView(false, isError = false)
         requestPermissionRationale()
     }

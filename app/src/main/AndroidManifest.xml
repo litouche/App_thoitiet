@@ -30,6 +30,7 @@
 
         <activity android:name=".ui.webviewnews.WebViewNewsActivity" />
         <activity android:name=".ui.chargecoin.ChargeCoinActivity" />
+        <activity android:name=".ui.webviewnews.news.NewActivity"/>
     </application>
 
 </manifest>
