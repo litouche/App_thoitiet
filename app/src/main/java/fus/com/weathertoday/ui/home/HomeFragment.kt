@@ -24,6 +24,7 @@ import fus.com.weathertoday.data.model.Weather
 import fus.com.weathertoday.databinding.FragmentHomeBinding
 import fus.com.weathertoday.ui.BaseFragment
 import fus.com.weathertoday.ui.MainActivity
+import fus.com.weathertoday.ui.container.ContainerFragmentDirections
 import fus.com.weathertoday.ui.home.adapter.CityHoursWeatherAdapter
 import fus.com.weathertoday.utils.Constants
 import fus.com.weathertoday.utils.SharedPreferenceHelper
@@ -73,7 +74,7 @@ class HomeFragment : BaseFragment() {
         binding.viewContentDetail.rcvWeatherHoursInDay.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.viewContentDetail.llNextSevenDayContainer.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToCitySevenDaysWeatherFragment()
+            val action = ContainerFragmentDirections.actionHomeFragmentToCitySevenDaysWeatherFragment()
             findNavController().navigate(action)
         }
 //        activity?.window?.statusBarColor = resources.getColor(R.color.bg_item_blue_white, null)

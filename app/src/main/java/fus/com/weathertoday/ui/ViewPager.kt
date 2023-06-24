@@ -2,21 +2,22 @@ package fus.com.weathertoday.ui
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
-import fus.com.weathertoday.ui.home.HomeFragment
-import fus.com.weathertoday.ui.webviewnews.list_webview.ListWebViewFragment
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class ViewPager(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
-    override fun getCount(): Int {
-        return 2
+class ViewPager(
+    list: ArrayList<Fragment>,
+    fm: FragmentManager,
+    lifecycle: Lifecycle
+) : FragmentStateAdapter(fm, lifecycle) {
+
+    private val fragmentList = list
+
+    override fun getItemCount(): Int {
+        return fragmentList.size
     }
 
-    override fun getItem(position: Int): Fragment {
-        return when (position) {
-            0 -> HomeFragment()
-            1 -> ListWebViewFragment()
-            else -> HomeFragment()
-        }
+    override fun createFragment(position: Int): Fragment {
+        return fragmentList[position]
     }
-
 }
